@@ -1,3 +1,4 @@
 <?php 
 
-// CREATED 
+$damage = new Damage();
+$spell = new Spell();
