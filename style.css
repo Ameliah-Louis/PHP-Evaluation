@@ -1,0 +1,18 @@
+/* Style pour la carte de sort */
+.spell-card {
+    border: 2px solid #000;
+    width: 300px;
+    padding: 10px;
+    margin: 10px;
+    background-color: #f0f0f0;
+    border-radius: 10px;
+}
+/* Style pour le nom du sort */
+.spell-name {
+    font-size: 24px;
+    font-weight: bold;
+}
+/* Style pour la description du sort */
+.spell-description {
+    font-size: 16px;
+}
