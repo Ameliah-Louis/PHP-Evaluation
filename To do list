@@ -1,0 +1,8 @@
+- connecter la bdd
+- role dans Joueur (admin/joueur) a faire en dernier
+- index (redirect vers les liste de sort/personnages avec un find id qui renvoie les personnages liés)
+- login (session auth)
+- page selection persos
+- page du perso avec la fiche perso son image et les sort en format carte
+
+- voir la gestion des roles si le temps et formulaire de création/modification

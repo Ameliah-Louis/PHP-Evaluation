@@ -4,7 +4,7 @@
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "dndspells";
+$dbname = "rpg_project";
 
 $connexion  = new mysqli($servername, $username, $password, $dbname);
 // Check err si pas de connexion
