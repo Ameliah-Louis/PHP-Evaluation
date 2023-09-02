@@ -1,4 +1,5 @@
 <?php
+
 require_once 'classes/Utils.php';
 require_once 'classes/ErrorCode.php';
 
@@ -17,5 +18,8 @@ if ($login !== "test" || $password !== "test") {
 }
 
 session_start();
-$_SESSION['login'] = 'test';
+$_SESSION['login'] = $login;
+$_SESSION['character'] = $_POST['character'];
 Utils::redirect('index.php');
+
+?>

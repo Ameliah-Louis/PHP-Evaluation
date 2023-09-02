@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"> <!-- Définir l'encodage à UTF-8 -->
+    <title>Cartes de Sorts</title>
+    <style>
+        /* Style pour la carte de sort */
+        .spell-card {
+            width: 450px;
+            height: 550px;
+            border: 2px solid #000;
+            background-color: #611f8d;
+            margin: 10px;
+            padding: 10px;
+            border-radius: 10px;
+            display: inline-block;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Style pour le nom du sort */
+        .spell-name {
+            font-size: 20px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        /* Style pour l'image du sort */
+        .spell-image {
+            width: 100%;
+            height: 33%;
+            background-image: url('https://explorednd.com/wp-content/uploads/2022/06/eldritch-blast-dnd-5e.png');
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        /* Style pour les particularités du sort */
+        .spell-properties {
+            font-size: 12px;
+            margin-top: 5px;
+        }
+
+        /* Style pour la description du sort (tronquée) */
+        .spell-description {
+            font-size: 16px;
+            margin-top: 50px;
+            max-height: 300px; /* Hauteur maximale de la description tronquée */
+            overflow: hidden;
+            text-overflow: ellipsis; /* Affiche "..." pour indiquer que le texte est tronqué */
+        }
+
+        /* Style pour le bouton d'expansion */
+        .expand-button {
+            text-align: center;
+            cursor: pointer;
+            color: blue;
+            font-weight: bold;
+        }
+
+        /* Style pour la description complète (cachée par défaut) */
+        .full-description {
+            display: none;
+        }
+        .spell-description {
+            font-size: 16px;
+            margin-top: 10px;
+            max-height: 150px; /* Hauteur maximale de la description */
+            overflow: auto; /* Affiche une barre de défilement si nécessaire */
+        }
+    </style>
+    <!-- <script>
+        function toggleDescription(cardId) {
+            var description = document.getElementById("desc-" + cardId);
+            var expandButton = document.getElementById("expand-" + cardId);
+            
+            if (description.style.display === "none" || description.style.display === "") {
+                description.style.display = "block";
+                expandButton.innerText = "Réduire";
+            } else {
+                description.style.display = "none";
+                expandButton.innerText = "Voir plus";
+            }
+        }
+    </script> -->
+</head>
+<body>
+    <!-- Exemple de carte de sort -->
+    <div class="spell-card">
+        <div class="spell-name">Eldritch Blast</div>
+        <div class="spell-image">
+            <!-- <img src="https://explorednd.com/wp-content/uploads/2022/06/eldritch-blast-dnd-5e.png" alt="Image du sort"> -->
+        </div>
+        <div class="spell-properties">
+            <p>Niveau : 0</p>
+            <p>École : École d'Abjuration</p>
+            <p>Temps d'incantation : 1 action</p>
+            <p>Portée : 36 mètres</p>
+            <p>Composantes : V, S</p>
+            <p>Durée : instantanée</p>
+        </div>
+        <div class="spell-description" id="desc-1">
+            <p>Un rayon d'énergie crépitante zigzague jusqu'à une créature à portée. Effectuez une attaque à distance avec un sort contre la cible. En cas de réussite, la cible subit 1d10 dégâts de force. Ce sort crée plus d'un rayon lorsque vous montez en niveau : deux rayons au niveau 5, trois rayons au niveau 11, et quatre rayons au niveau 17. Vous pouvez diriger les rayons sur une cible unique et les répartir entre différentes créatures. Effectuez un jet d'attaque séparé pour chaque rayon.</p>
+        </div>
+    </div>
+
+    <!-- Ajoutez d'autres cartes de sort ici avec le même format -->
+</body>
+</html>
