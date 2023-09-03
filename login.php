@@ -5,39 +5,87 @@ require_once 'classes/ErrorCode.php';
 
 ?>
 
-<h1>Connexion</h1>
-
 <?php if (isset($_GET['error'])) { ?>
   <div class="error">
     <?php echo ErrorCode::getErrorMessage(intval($_GET['error'])); ?>
   </div>
 <?php } ?>
 
+<?php //$users = $testUser ;  echo "Users avant le selecteur try catch";  var_dump ($users);?>
 <form action="auth.php" method="post">
   <div>
-    <label for="login">Login :</label>
-    <input type="text" name="login" id="login" />
-  </div>
-  <div>
-    <label for="pass">Mot de passe :</label>
-    <input type="password" name="pass" id="pass" />
-  </div>
-  <div>
-    <label for="character">Personnage :</label>
-    <select name="character">
-      <option value="">Choisissez un personnage</option>
-      <?php
-      $query = "SELECT id, nom FROM characters";
-      $statement = $pdo->prepare($query);
-      $statement->execute();
+    <label for="username">Utilisateur :</label>
+    <select name="username">
+  <?php
+  //echo '<option value="">Choisissez un utilisateur</option>';
+  // try {
+  //   $pdo = getDbConnection();
+  // } catch (PDOException) {
+  //   echo '</select> <p>Erreur lors de la récupération des produits depuis la BDD</p>';
+  //   exit;
+  // }
+  //   $query = "SELECT id, username FROM users";
+  //   $statement = $pdo->prepare($query);
+  //   $statement->execute();
 
-      while ($row = $statement->fetch()) {
-        echo '<option value="' . $row['id'] . '">' . $row['nom'] . '</option>';
-      }
-      ?>
-    </select>
+  //   while ($row = $statement->fetch()) {
+  //     echo '<option value="' . $row['id'] . '">' . $row['username'] . '</option>';
+  //   } echo '</select>';
+  ?>
+  
+  <?php 
+  echo '<option value="">Choisissez un utilisateur</option>';
+  try {
+  // $users = getUsers();
+  $users = $testUser ;
+} catch (PDOException) {
+  echo "Erreur lors de la récupération des utilisateurs";
+  exit;
+} ?>
+<?php// $users = $testUser ;  echo "<br> Users avant le if while affichant les users";  var_dump ($users);?>
+
+  <?php
+  //Ne marche pas pour l'affichage de la list de noms d'users
+  // if ($users) {
+  //   while ($row = $users->fetch()) {
+  //     echo '<option value>' . $row->username . '</option>';
+  //   }
+  // }
+  foreach ($users as $user) {
+    echo '<option value>' . $user->username . '</option>';
+}
+  ?>
+</select>
   </div>
+  <div>
+    <label for="pswd">Mot de passe :</label>
+    <input type="password" name="pswd" id="pswd" />
+  </div>
+
   <input type="submit" value="Connexion" />
 </form>
 
-<?php require_once 'layout/footer.php';
+<?php
+
+// un essai via bard pour stocker mon objet User de test dans la session
+// if (isset($_POST['username']) && isset($_POST['pswd'])) {
+
+//   $username = $_POST['username'];
+//   $pswd = $_POST['pswd'];
+
+//   $user = new User();
+//   $user->setUsername($username);
+//   $user->setPassword($pswd);
+
+//   if ($user->checkLogin()) {
+//     // L'utilisateur est connecté
+//     session_set_userdata("user", $user);
+//     header("Location: index.php");
+//   } else {
+//     // L'utilisateur n'est pas connecté
+//     header("Location: auth.php?error=1");
+//   }
+// }
+?>
+
+<?php require_once 'layout/footer.php'; ?>

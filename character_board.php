@@ -3,9 +3,11 @@
 <?php
 require_once 'classes/Spell.php';
     //tableau de sorts $spells venant de ma BDD
-    $spells = array( 
+    $spells = array
+    ( 
 
-        new Spell(
+        new Spell
+        (
             
         //a remplacer avec un call BDD
         1,
@@ -20,8 +22,9 @@ require_once 'classes/Spell.php';
         avec un sort contre la cible. En cas de réussite, la cible subit 1d10 dégâts de force. Ce sort crée plus d'un 
         rayon lorsque vous montez en niveau : deux rayons au niveau 5, trois rayons au niveau 11, et quatre rayons au 
         niveau 17. Vous pouvez diriger les rayons sur une cible unique et les répartir entre différentes créatures. 
-        Effectuez un jet d'attaque séparé pour chaque rayon.</p><br />")
-        );
+        Effectuez un jet d'attaque séparé pour chaque rayon.</p><br />"
+        )
+    );
         
         // Boucle pour afficher les cartes de sort
         foreach ($spells as $spell) {
