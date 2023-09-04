@@ -27,7 +27,7 @@
 
 //TODO: Validate form data
 [
-  'username' => $user,
+  'username' => $username,
   'pswd' => $password
 ] = $_POST;
 
@@ -36,22 +36,23 @@ require_once 'functions/db.php';
 // Récupération d'une instance de PDO
 try {
   $pdo = getDbConnection();
-} catch (PDOException) {
+} catch (PDOException $e) {
   echo "Erreur de connexion à la base de données";
+  var_dump($e);
   exit;
 }
 
 $stmtUser = $pdo->prepare("SELECT * FROM users WHERE username=:username");
 $stmtUser->execute(['username' => $username]);
 
-$user = $stmtUser->fetch();
+$username = $stmtUser->fetch();
 
-if ($user === false) {
+if ($username === false) {
   echo "Utilisateur non trouvé";
   exit;
 }
 
-if ($password === $user['pswd']) {
+if ($password === $username['pswd']) {
   echo "Login ok";
 } else {
   echo "Mot de passe incorrect";

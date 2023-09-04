@@ -2,10 +2,10 @@
 
 class User 
 {
-    public int $id = 1;
-    public string $username = "améliah";
-    public string $pswd = 'test';
-    public int $roles_id = 0;
+    private int $id = 1;
+    private string $username = "améliah";
+    private string $pswd = 'test';
+    private int $roles_id = 0;
 
 
     public function __construct($id, $username, $pswd, $roles_id ) 
@@ -15,4 +15,22 @@ class User
     $this->pswd = $pswd;
     $this->roles_id = $roles_id;
     }
+
+    public function getUserId () : int 
+    {
+        return ($this->id);
+    }
+    public function getUsername () : string 
+    {
+        return strtoupper($this->username);
+    }
+    public function getpPswd () : string 
+    {
+        return strtoupper($this->pswd);
+    }
+    public function getRolesId () : int 
+    {
+        return strtoupper($this->roles_id);
+    }
+    
 }

@@ -17,32 +17,33 @@ require_once 'classes/ErrorCode.php';
     <label for="username">Utilisateur :</label>
     <select name="username">
   <?php
-  //echo '<option value="">Choisissez un utilisateur</option>';
-  // try {
-  //   $pdo = getDbConnection();
-  // } catch (PDOException) {
-  //   echo '</select> <p>Erreur lors de la récupération des produits depuis la BDD</p>';
-  //   exit;
-  // }
-  //   $query = "SELECT id, username FROM users";
-  //   $statement = $pdo->prepare($query);
-  //   $statement->execute();
+  echo '<option value="">Choisissez un utilisateur</option>';
+  try {
+    $pdo = getDbConnection();
+  } catch (PDOException) {
+    echo '</select> <p>Erreur lors de la récupération des produits depuis la BDD</p>';
+    exit;
+  }
+    $query = "SELECT id, username FROM users";
+    $statement = $pdo->prepare($query);
+    $statement->execute();
 
-  //   while ($row = $statement->fetch()) {
-  //     echo '<option value="' . $row['id'] . '">' . $row['username'] . '</option>';
-  //   } echo '</select>';
+    while ($row = $statement->fetch()) {
+      echo '<option value="' . $row['id'] . '">' . $row['username'] . '</option>';
+    } echo '</select>';
   ?>
   
   <?php 
-  echo '<option value="">Choisissez un utilisateur</option>';
-  try {
-  // $users = getUsers();
-  $users = $testUser ;
-} catch (PDOException) {
-  echo "Erreur lors de la récupération des utilisateurs";
-  exit;
-} ?>
-<?php// $users = $testUser ;  echo "<br> Users avant le if while affichant les users";  var_dump ($users);?>
+//   echo '<option value="">Choisissez un utilisateur</option>';
+//   try {
+//   // $users = getUsers();
+//   $users = $testUser ;
+// } catch (PDOException $e) {
+//   echo "Erreur lors de la récupération des utilisateurs";
+//   var_dump($e);
+//   exit;
+// } ?>
+<?php //$users = $testUser ;  echo "<br> Users avant le if while affichant les users";  var_dump ($users);?>
 
   <?php
   //Ne marche pas pour l'affichage de la list de noms d'users
@@ -51,9 +52,9 @@ require_once 'classes/ErrorCode.php';
   //     echo '<option value>' . $row->username . '</option>';
   //   }
   // }
-  foreach ($users as $user) {
-    echo '<option value>' . $user->username . '</option>';
-}
+//   foreach ($users as $user) {
+//     echo '<option value>' . $user->username . '</option>';
+// }
   ?>
 </select>
   </div>
