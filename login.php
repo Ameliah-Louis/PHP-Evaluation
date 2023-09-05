@@ -1,62 +1,20 @@
 <?php
 
-require_once 'layout/header.php';
 require_once 'classes/ErrorCode.php';
+require_once 'functions/db.php';
 
+// En vrai ce if je l'ai copié du cours de la page login mais j'ai pas tout à fais capté l'usage ici -->
+//if (isset($_GET['error'])) { ?>
+  <!-- <div class="error"> -->
+    <?php //echo ErrorCode::getErrorMessage(intval($_GET['error'])); ?>
+  <!-- </div> -->
+<?php //} 
+require_once 'layout/header.php';
 ?>
 
-<?php if (isset($_GET['error'])) { ?>
-  <div class="error">
-    <?php echo ErrorCode::getErrorMessage(intval($_GET['error'])); ?>
-  </div>
-<?php } ?>
-
-<?php //$users = $testUser ;  echo "Users avant le selecteur try catch";  var_dump ($users);?>
-<form action="auth.php" method="post">
-  <div>
-    <label for="username">Utilisateur :</label>
-    <select name="username">
-  <?php
-  echo '<option value="">Choisissez un utilisateur</option>';
-  try {
-    $pdo = getDbConnection();
-  } catch (PDOException) {
-    echo '</select> <p>Erreur lors de la récupération des produits depuis la BDD</p>';
-    exit;
-  }
-    $query = "SELECT id, username FROM users";
-    $statement = $pdo->prepare($query);
-    $statement->execute();
-
-    while ($row = $statement->fetch()) {
-      echo '<option value="' . $row['id'] . '">' . $row['username'] . '</option>';
-    } echo '</select>';
-  ?>
-  
-  <?php 
-//   echo '<option value="">Choisissez un utilisateur</option>';
-//   try {
-//   // $users = getUsers();
-//   $users = $testUser ;
-// } catch (PDOException $e) {
-//   echo "Erreur lors de la récupération des utilisateurs";
-//   var_dump($e);
-//   exit;
-// } ?>
-<?php //$users = $testUser ;  echo "<br> Users avant le if while affichant les users";  var_dump ($users);?>
-
-  <?php
-  //Ne marche pas pour l'affichage de la list de noms d'users
-  // if ($users) {
-  //   while ($row = $users->fetch()) {
-  //     echo '<option value>' . $row->username . '</option>';
-  //   }
-  // }
-//   foreach ($users as $user) {
-//     echo '<option value>' . $user->username . '</option>';
-// }
-  ?>
-</select>
+<?php 
+// echo "<br> \$Users avant le selecteur try catch <br>";
+// var_dump($Users);?>
   </div>
   <div>
     <label for="pswd">Mot de passe :</label>
@@ -68,14 +26,14 @@ require_once 'classes/ErrorCode.php';
 
 <?php
 
-// un essai via bard pour stocker mon objet User de test dans la session
-// if (isset($_POST['username']) && isset($_POST['pswd'])) {
+// un essai via bard pour stocker mon objet User de test dans la session quand mon accès BDD n'était pas réglé
+// if (isset($_POST['user_name']) && isset($_POST['pswd'])) {
 
-//   $username = $_POST['username'];
+//   $user_name = $_POST['user_name'];
 //   $pswd = $_POST['pswd'];
 
 //   $user = new User();
-//   $user->setUsername($username);
+//   $user->setuser_name($user_name);
 //   $user->setPassword($pswd);
 
 //   if ($user->checkLogin()) {

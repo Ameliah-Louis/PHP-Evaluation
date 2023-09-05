@@ -4,22 +4,22 @@
 
 // // A RETRAVAILLER
 
-// if (empty($_POST['username']) || empty($_POST['pass'])) {
+// if (empty($_POST['user_name']) || empty($_POST['pass'])) {
 //   Utils::redirect('login.php?error=' . ErrorCode::LOGIN_FIELDS_REQUIRED);
 // }
 
 // [
-//   'username' => $username,
+//   'user_name' => $user_name,
 //   'pass' => $password
 // ] = $_POST;
 
 // // Authentification
-// if ($username !== "test" || $password !== "test") {
+// if ($user_name !== "test" || $password !== "test") {
 //   Utils::redirect('login.php?error=' . ErrorCode::INVALID_CREDENTIALS);
 // }
 
 // session_start();
-// $_SESSION['username'] = $username;
+// $_SESSION['user_name'] = $user_name;
 // $_SESSION['character'] = $_POST['character'];
 // Utils::redirect('index.php');
 ?>
@@ -27,7 +27,7 @@
 
 //TODO: Validate form data
 [
-  'username' => $username,
+  'user_name' => $user_name,
   'pswd' => $password
 ] = $_POST;
 
@@ -42,17 +42,17 @@ try {
   exit;
 }
 
-$stmtUser = $pdo->prepare("SELECT * FROM users WHERE username=:username");
-$stmtUser->execute(['username' => $username]);
+$stmtUser = $pdo->prepare("SELECT * FROM users WHERE user_name=:user_name");
+$stmtUser->execute(['user_name' => $user_name]);
 
-$username = $stmtUser->fetch();
+$user_name = $stmtUser->fetchAll();
 
-if ($username === false) {
+if ($user_name === false) {
   echo "Utilisateur non trouvé";
   exit;
 }
 
-if ($password === $username['pswd']) {
+if ($password === $user_name['pswd']) {
   echo "Login ok";
 } else {
   echo "Mot de passe incorrect";

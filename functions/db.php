@@ -50,6 +50,13 @@ function getUsers(): array
   return $stmt->fetchAll();
 }
 
+function getCharacters(): array
+{
+  $pdo = getDbConnection();
+  $stmt = $pdo->query("SELECT * FROM characters");
+  return $stmt->fetchAll();
+}
+
   // Pour lire les résultats un par un (curseur)
   // while ($product = $stmt->fetch()) {
   //   var_dump($product);
