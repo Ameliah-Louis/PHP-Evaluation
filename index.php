@@ -43,7 +43,7 @@ foreach ($Users as $User) {
 } echo '</select>';
 
 require_once 'login.php'
-?> 0
+?>
 
 <!-- require_once 'templates/user.php';
 }
