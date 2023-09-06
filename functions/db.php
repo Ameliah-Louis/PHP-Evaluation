@@ -9,7 +9,7 @@ function getDbConnection(): PDO
   // $host = $dbSettings['DB_HOST'];
   [
     'DB_HOST' => $host,
-    // 'DB_PORT' => $port,
+    'DB_PORT' => $port,
     'DB_NAME' => $dbname,
     'DB_CHARSET' => $charset,
     'DB_USER' => $user,
