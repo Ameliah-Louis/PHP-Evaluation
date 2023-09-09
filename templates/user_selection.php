@@ -7,6 +7,8 @@
 </div>
 
 -->
+
+<!-- Si le temps, prévoir un template pour le SELECT user -->
 <?php 
 echo'<option value="'. $User['id'] . '">'. $User['user_name'] . '</option>'; 
 echo '</select>'; ?>

@@ -6,7 +6,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="assets/style.css">
-  <title>Projet JDR</title>
+  <title>Projet JDR</title> 
+  <!-- faire des redirect sur plusieurs pages en fonction d'à quelle étape on se trouve  -->
 </head>
 
 <body>

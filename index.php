@@ -39,9 +39,9 @@ require_once 'classes/User.php';
     <select name="user_name">
 <?php echo '<option value="">Choisissez un utilisateur</option>';
 foreach ($Users as $User) {
-  echo'<option value="'. $User['id'] . '">'. $User['user_name'] . '</option>'; 
+  echo'<option value="'. $User['user_name'] . '">'. $User['id'] . ' - ' . $User['user_name'] . '</option>'; 
 } echo '</select>';
-
+// var_dump ($User);
 require_once 'login.php'
 ?>
 

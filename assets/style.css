@@ -1,5 +1,13 @@
 /* Style pour la carte de sort */
+
+.spell-list {
+    display: flex;
+    flex-direction: column;
+
+}
+
 .spell-card {
+
     border: 2px solid #000;
     width: 300px;
     padding: 10px;

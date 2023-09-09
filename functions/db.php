@@ -50,12 +50,25 @@ function getUsers(): array
   return $stmt->fetchAll();
 }
 
+
+
+
 function getCharacters(): array
 {
+  require_once 'auth.php';
+  $users_id = 4; //contournement pour avancer sur la suite
   $pdo = getDbConnection();
-  $stmt = $pdo->query("SELECT * FROM characters");
+  $stmt = $pdo->prepare('SELECT * FROM characters WHERE users_id = :users_id');
+  $stmt->execute(['users_id' => $users_id]);
+  
   return $stmt->fetchAll();
 }
+// function getCharacters(): array
+// {
+//   $pdo = getDbConnection();
+//   $stmt = $pdo->query('SELECT * FROM characters WHERE users_id = $currentUser['id']');
+//   return $stmt->fetchAll();
+// }
 
   // Pour lire les résultats un par un (curseur)
   // while ($product = $stmt->fetch()) {
