@@ -58,10 +58,10 @@ function getUserCharacters(int $users_id): array
   //correction de la requête avec exemple de la requete pour les sorts comme modèle
   //Requete à préparer car transfert de la data $users_id
   $pdo = getDbConnection();
-  $stmt = $pdo->prepare('SELECT * FROM characters JOIN users ON characters.users_id = users.id WHERE users.id = :users_id;');
+  $stmt = $pdo->prepare('SELECT * FROM characters WHERE users_id = :users_id;');
   $stmt->execute(['users_id' => $users_id]);
-  
-  return $stmt->fetchAll();
+
+  return $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
 
 
