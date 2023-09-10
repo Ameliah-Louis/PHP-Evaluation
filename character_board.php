@@ -58,15 +58,15 @@ $welcomeMessage = "Bienvenue, voici la liste des sorts.";
             
             //         )
             // );
-            var_dump($_POST);
+            // var_dump($_POST);
             // convert the $_POST['a'] to integer if it's valid, or default to 0 (from stackOverflow)
             $int = (is_numeric($_POST['character_id']) ? (int)$_POST['character_id'] : 0);
-            var_dump($int);
+            // var_dump($int);
             $character_id = $int;
-            var_dump($character_id);
+            // var_dump($character_id);
             try {
                 $characterSpells = getCharacterSpells($character_id);
-                echo "<br> Spells récupérés <br>";
+                // echo "<br> Spells récupérés <br>";
                 // var_dump($characterSpells);
             } catch (PDOException $e) {
                 echo "Erreur récup des spells <br>";

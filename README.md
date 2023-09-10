@@ -43,3 +43,6 @@ Une fois le personnage choisi on arrive sur cette page, et s'affichent les sorts
 J'avais tenter de me lancer dans les templates pour les options du menu SELECT déroulant, mais je n'ai pas pu le faire marcher.
 
 J'avais aussi envisagé utiliser les templates pour les cartes de sort, afin de réunir la methode de création des cartes à part.
+
+## PS
+J'ai eu beaucoup de mal à documenté le readme vu que j'ai beaucoup pataugé. J'espere que c'est assez clair.

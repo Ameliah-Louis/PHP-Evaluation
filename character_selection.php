@@ -20,13 +20,13 @@ $welcomeMessage = "Bienvenue, veuillez choisir un Personnage.";
 // var_dump($currentUser);
 // var_dump($currentUser['id']);
 $user_id = $currentUser['id'];
-var_dump($user_id);
+// var_dump($user_id);
 // var_dump($_POST);
 try {
       //getCharacters, à refaire il me faut les perso du user uniquement
       $Characters = getUserCharacters($user_id);
-      echo "<br> characters récupérés <br>";
-      var_dump($Characters);
+      // echo "<br> characters récupérés <br>";
+      // var_dump($Characters);
     } catch (PDOException $e) {
       echo "Erreur récup characters <br>";
       var_dump($e);
