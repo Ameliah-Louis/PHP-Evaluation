@@ -6,11 +6,13 @@ require_once 'classes/User.php';
 
 // echo 'test getDbConnection <br>';
 // $testpdoconnect = getDbConnection();
-
-    if (isset($_SESSION['user_name'])) {
-      $welcomeMessage = "Bienvenue, " . $_SESSION['user_name'];
-    } else {
-  $welcomeMessage = "Bienvenue, veuillez choisir un utilisateur.";
+// session_start();
+// var_dump($_SESSION);
+if (isset($_SESSION['user_name'])) {
+    $welcomeMessage = "Bienvenue, " . $_SESSION['user_name'];
+  } else {
+    // var_dump($_SESSION);
+$welcomeMessage = "Bienvenue, veuillez choisir un utilisateur.";
 }  ?>
 <h1><?php echo $welcomeMessage; ?></h1>
 
@@ -39,7 +41,7 @@ require_once 'classes/User.php';
     <select name="user_name">
 <?php echo '<option value="">Choisissez un utilisateur</option>';
 foreach ($Users as $User) {
-  echo'<option value="'. $User['user_name'] . '">'. $User['id'] . ' - ' . $User['user_name'] . '</option>'; 
+require 'templates/user_selection.php';
 } echo '</select>';
 // var_dump ($User);
 require_once 'login.php'

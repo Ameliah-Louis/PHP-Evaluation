@@ -1,5 +1,5 @@
 <?php
-
+//idées de présentation de card
 ?>
 
 <div class="col">
@@ -34,7 +34,6 @@
       <div class="classe">Ensorceleur</div>
       <div class="classe">Magicien</div>
       <div class="classe">Rôdeur</div>
-      <div class="source">Xanathar´s Guide to Everything</div>
       <div class="ref">
         →
         <strong><a href="spell.php">Sorts D&amp;D 5e</a></strong>

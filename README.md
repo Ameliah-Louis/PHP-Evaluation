@@ -25,8 +25,8 @@ J'aurais préférer garder le menu déroulant pour pouvoir swith d'un personnage
 ## Les classes 
 
 Elles sont nombreuses mais pas toutes travaillées.
-J'utilisai la classe User pour contourner mes diffucltés à pouvoir me connecter à ma BDD.
-Et la classe spell m'a servis à la même chose quand je n'ai pas reussi à connecter l'utilisateur à ses personnages liés via le user_id.
+[classe](User.php) est utilisée pour contourner mes diffucltés à pouvoir me connecter à ma BDD. J'aimerai la retravailler avec les données extraites de la BDD.
+[classe](spell.php) m'a servi à la même chose quand je n'ai pas reussi à connecter l'utilisateur à ses personnages liés via le user_id.
 J'avais penser retravailler ces classes pour qu'elles recoivent les données de la BDD puis les appeler mais manque de temps.
 
 J'avais aussi anticiper d'autres classes pour le cas ou j'aurais le temps de pousser mon projet un peu plus loin.

@@ -1,5 +1,5 @@
 <?php
-//CODE DU COURS
+//CODE DU COURS à implémenter
 class ErrorCode
 {
   public const ADMIN_ACCESS_ERROR = 1;
