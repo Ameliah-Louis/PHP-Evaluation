@@ -90,10 +90,10 @@ $welcomeMessage = "Bienvenue, voici la liste des sorts.";
               $spell = new Spell ($id = $spell["id"], $spell_name = $spell["spell_name"], $spell_level = $spell["spell_level"], $schools_id = $spell["schools_id"], $spell_property = $spell["spell_property"], $spell_desc = $spell["spell_desc"]);
         echo '<div class="spell-card">';
         echo '<div class= spell-content>';
-        echo '<div class="spell-name">' . $spell->spell_name . '</div>';
-        echo '<div>Niveau : ' . $spell->spell_level . '</div>';
-        echo '<div class="spell-property">' . $spell->spell_property . '</div>';
-        echo '<div class="spell-description">' . $spell->spell_desc . '</div>';
+        echo '<div class="spell-name">' . $spell->getSpellName() . '</div>';
+        echo '<div>Niveau : ' . $spell->getSpellLevel() . '</div>';
+        echo '<div class="spell-property">' . $spell->getSpellProperty() . '</div>';
+        echo '<div class="spell-description">' . $spell->getSpellDesc() . '</div>';
         echo '</div>';
         echo '</div>';
             }
