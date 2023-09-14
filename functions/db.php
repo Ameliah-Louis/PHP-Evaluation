@@ -89,3 +89,4 @@ function getCharacterSpells(int $character_id): array
   // while ($product = $stmt->fetch()) {
   //   var_dump($product);
   // }
+

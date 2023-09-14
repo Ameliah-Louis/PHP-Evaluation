@@ -30,7 +30,7 @@ class User
     }
     public function getRolesId () : int 
     {
-        return strtoupper($this->roles_id);
+        return ($this->roles_id);
     }
     
 }

@@ -7,11 +7,14 @@ require_once 'functions/db.php';
 require_once 'classes/User.php'; ?>
 
 <?php
+// if (!isset($_SESSION['login'])) {
+//   Utils::redirect('login.php?error=' . ErrorCode::ADMIN_ACCESS_ERROR);
+// }
 if (isset($_SESSION['user_name'])) {
-    $welcomeMessage = "Bienvenue, " . $_SESSION['user_name'] . 'veuillez choisir un Personnage.';
+    $welcomeMessage = "Hello, " . $_SESSION['user_name'] . 'veuillez choisir un Personnage.';
   } else {
     // var_dump($_SESSION);
-$welcomeMessage = "Bienvenue, veuillez choisir un Personnage.";
+$welcomeMessage = "Veuillez choisir un Personnage.";
 }  ?>
 <h1><?php echo $welcomeMessage; ?></h1>
 
@@ -53,3 +56,5 @@ try {
 
 
 <!-- Auth à compléter pour gérer les personnages puis afficher la page perso avec les sorts -->
+
+<?php require_once 'layout/footer.php';

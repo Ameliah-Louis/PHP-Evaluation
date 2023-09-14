@@ -16,7 +16,7 @@
       <li>
         <a href="index.php">Accueil</a>
       </li>
-        <?php if (isset($_SESSION['username'])) { ?>
+        <?php if (isset($_SESSION['user_name'])) { ?>
           <li>
             <a href="logout.php">Déconnexion</a>
           </li> </ul> </nav>

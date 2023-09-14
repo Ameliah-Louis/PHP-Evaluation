@@ -108,6 +108,13 @@ class Spell
         return $this;
     }
 
+    public function deleteCharSpell(int $character_id, int $spells_id) : void
+{
+  $pdo = getDbConnection();
+  $stmt = $pdo->prepare("DELETE FROM characters_has_spells WHERE characters_has_spells.characters_id = :character_id AND characters_has_spells.spells_id = :spells_id;");
+  $stmt->execute(['character_id' => $character_id, 'spells_id' => self::$id]);
+}
+
 }
     //  $name = "Eldritch Blast"
     //  $school_id = classe Evocation with parameters school_name & school_image,

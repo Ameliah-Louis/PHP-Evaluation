@@ -8,10 +8,10 @@ require_once 'classes/Spell.php';
 
 // var_dump($_SESSION);
 if (isset($_SESSION['user_name'])) {
-    $welcomeMessage = "Bienvenue, " . $_SESSION['user_name'] . 'voici la liste des sorts.';
+    $welcomeMessage = $_SESSION['user_name'] . ' ,voici la liste des sorts.';
   } else {
     // var_dump($_SESSION);
-$welcomeMessage = "Bienvenue, voici la liste des sorts.";
+$welcomeMessage = "Voici la liste des sorts.";
 }  ?>
 <h1><?php echo $welcomeMessage; ?></h1>
 
@@ -94,6 +94,19 @@ $welcomeMessage = "Bienvenue, voici la liste des sorts.";
         echo '<div>Niveau : ' . $spell->getSpellLevel() . '</div>';
         echo '<div class="spell-property">' . $spell->getSpellProperty() . '</div>';
         echo '<div class="spell-description">' . $spell->getSpellDesc() . '</div>';
+        // j'ai commenté car ça casse mes cartes mais je penses pas être loin
+        // echo '<div>< class="button-ctr">
+        //             <form action="#" method="post">
+        //             <button type="submit" name="delete" value="delete">Supprimer</button>
+        //         </form>';
+        //         if ($_POST['delete'] === 'delete') {
+        //             $character_id->$_POST['character_id'];
+        //             $spell->deleteCharSpell(int $character_id, int $id);
+        //             header('Location: .');
+        //         }
+        //     '</div>';
+        echo '<div class="button-ctr"> <button type="submit" name="delete" value="delete">Supprimer</button></div>';
+        //juste pour avoir un bouton affiché
         echo '</div>';
         echo '</div>';
             }
